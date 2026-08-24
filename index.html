@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobBoard - Find Your Dream Job</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+            <div class="logo">
+                <span class="logo-icon">💼</span>
+                <span>Job<span>Board</span></span>
+            </div>
+
+            <nav>
+                <a href="#jobs">Find Jobs</a>
+                <a href="#companies">Companies</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="nav-buttons">
+                <button class="login-btn">Log In</button>
+                <button class="post-btn">Post a Job</button>
+            </div>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">🚀 Find your next opportunity</span>
+
+                <h1>
+                    Find a job you
+                    <span>love.</span>
+                </h1>
+
+                <p>
+                    Discover thousands of job opportunities from top companies
+                    and take the next step in your career.
+                </p>
+            </div>
+
+            <!-- Search Box -->
+            <div class="search-box">
+                <div class="search-field">
+                    <span>🔍</span>
+                    <input
+                        type="text"
+                        id="jobSearch"
+                        placeholder="Job title, keywords..."
+                    >
+                </div>
+
+                <div class="search-field">
+                    <span>📍</span>
+                    <input
+                        type="text"
+                        id="locationSearch"
+                        placeholder="Location"
+                    >
+                </div>
+
+                <button class="search-btn" id="searchBtn">
+                    Search Jobs
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container main-content" id="jobs">
+
+        <!-- Sidebar -->
+        <aside class="filters">
+            <div class="filter-header">
+                <h3>Filters</h3>
+                <button id="clearFilters">Clear all</button>
+            </div>
+
+            <div class="filter-group">
+                <h4>Job Type</h4>
+
+                <label>
+                    <input type="checkbox" value="Full-time" class="job-type">
+                    Full-time
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Part-time" class="job-type">
+                    Part-time
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Remote" class="job-type">
+                    Remote
+                </label>
+
+                <label>
+                    <input type="checkbox" value="Contract" class="job-type">
+                    Contract
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Experience</h4>
+
+                <label>
+                    <input type="checkbox" class="experience">
+                    Entry Level
+                </label>
+
+                <label>
+                    <input type="checkbox" class="experience">
+                    Mid Level
+                </label>
+
+                <label>
+                    <input type="checkbox" class="experience">
+                    Senior Level
+                </label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Salary Range</h4>
+
+                <label>
+                    <input type="radio" name="salary">
+                    $40k - $60k
+                </label>
+
+                <label>
+                    <input type="radio" name="salary">
+                    $60k - $90k
+                </label>
+
+                <label>
+                    <input type="radio" name="salary">
+                    $90k+
+                </label>
+            </div>
+        </aside>
+
+        <!-- Job Listings -->
+        <section class="job-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Latest Jobs</h2>
+                    <p id="resultCount">6 jobs found</p>
+                </div>
+
+                <select id="sortJobs">
+                    <option value="latest">Sort: Latest</option>
+                    <option value="salary-high">Salary: High to Low</option>
+                    <option value="salary-low">Salary: Low to High</option>
+                </select>
+            </div>
+
+            <div id="jobList">
+
+                <!-- Job 1 -->
+                <article class="job-card" data-title="Frontend Developer" data-location="New York" data-type="Full-time" data-salary="95000">
+                    <div class="company-logo purple">T</div>
+
+                    <div class="job-info">
+                        <span class="job-type">Full-time</span>
+                        <h3>Frontend Developer</h3>
+                        <p class="company">TechNova</p>
+
+                        <div class="job-meta">
+                            <span>📍 New York, NY</span>
+                            <span>💰 $85k - $105k</span>
+                        </div>
+
+                        <div class="tags">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>CSS</span>
+                        </div>
+                    </div>
+
+                    <button class="apply-btn">Apply Now</button>
+                </article>
+
+                <!-- Job 2 -->
+                <article class="job-card" data-title="UI UX Designer" data-location="Remote" data-type="Remote" data-salary="80000">
+                    <div class="company-logo pink">C</div>
+
+                    <div class="job-info">
+                        <span class="job-type remote">Remote</span>
+                        <h3>UI/UX Designer</h3>
+                        <p class="company">Creative Labs</p>
+
+                        <div class="job-meta">
+                            <span>📍 Remote</span>
+                            <span>💰 $70k - $90k</span>
+                        </div>
+
+                        <div class="tags">
+                            <span>Figma</span>
+                            <span>UI Design</span>
+                            <span>UX</span>
+                        </div>
+                    </div>
+
+                    <button class="apply-btn">Apply Now</button>
+                </article>
+
+                <!-- Job 3 -->
+                <article class="job-card" data-title="Backend Developer" data-location="Austin" data-type="Full-time" data-salary="105000">
+                    <div class="company-logo blue">D</div>
+
+                    <div class="job-info">
+                        <span class="job-type">Full-time</span>
+                        <h3>Backend Developer</h3>
+                        <p class="company">DataFlow</p>
+
+                        <div class="job-meta">
+                            <span>📍 Austin, TX</span>
+                            <span>💰 $95k - $115k</span>
+                        </div>
+
+                        <div class="tags">
+                            <span>Node.js</span>
+                            <span>Python</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+
+                    <button class="apply-btn">Apply Now</button>
+                </article>
+
+                <!-- Job 4 -->
+                <article class="job-card" data-title="Product Manager" data-location="San Francisco" data-type="Full-time" data-salary="120000">
+                    <div class="company-logo orange">P</div>
+
+                    <div class="job-info">
+                        <span class="job-type">Full-time</span>
+                        <h3>Product Manager</h3>
+                        <p class="company">Productify</p>
+
+                        <div class="job-meta">
+                            <span>📍 San Francisco, CA</span>
+                            <span>💰 $110k - $135k</span>
+                        </div>
+
+                        <div class="tags">
+                            <span>Product</span>
+                            <span>Agile</span>
+                            <span>Strategy</span>
+                        </div>
+                    </div>
+
+                    <button class="apply-btn">Apply Now</button>
+                </article>
+
+                <!-- Job 5 -->
+                <article class="job-card" data-title="Marketing Specialist" data-location="Chicago" data-type="Part-time" data-salary="55000">
+                    <div class="company-logo green">M</div>
+
+                    <div class="job-info">
+                        <span class="job-type part-time">Part-time</span>
+                        <h3>Marketing Specialist</h3>
+                        <p class="company">MarketPro</p>
+
+                        <div class="job-meta">
+                            <span>📍 Chicago, IL</span>
+                            <span>💰 $45k - $65k</span>
+                        </div>
+
+                        <div class="tags">
+                            <span>Marketing</span>
+                            <span>SEO</span>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+
+                    <button class="apply-btn">Apply Now</button>
+                </article>
+
+                <!-- Job 6 -->
+                <article class="job-card" data-title="Data Analyst" data-location="Boston" data-type="Contract" data-salary="75000">
+                    <div class="company-logo teal">A</div>
+
+                    <div class="job-info">
+                        <span class="job-type contract">Contract</span>
+                        <h3>Data Analyst</h3>
+                        <p class="company">Analytics Co.</p>
+
+                        <div class="job-meta">
+                            <span>📍 Boston, MA</span>
+                            <span>💰 $65k - $85k</span>
+                        </div>
+
+                        <div class="tags">
+                            <span>SQL</span>
+                            <span>Excel</span>
+                            <span>Power BI</span>
+                        </div>
+                    </div>
+
+                    <button class="apply-btn">Apply Now</button>
+                </article>
+
+            </div>
+
+            <div class="no-results" id="noResults">
+                <div>🔎</div>
+                <h3>No jobs found</h3>
+                <p>Try changing your search or filters.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Companies -->
+    <section class="companies" id="companies">
+        <div class="container">
+            <p>Trusted by professionals at</p>
+
+            <div class="company-names">
+                <span>TechNova</span>
+                <span>Creative Labs</span>
+                <span>DataFlow</span>
+                <span>Productify</span>
+                <span>MarketPro</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Build your career with confidence.</h2>
+            <p>
+                JobBoard connects talented professionals with companies
+                looking for their next great hire.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <h3>💼 JobBoard</h3>
+                <p>Find your next opportunity.</p>
+            </div>
+
+            <p>Intern ID: <strong>CITS7582</strong></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
